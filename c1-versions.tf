@@ -14,7 +14,7 @@ provider "aws" {
   region  = var.aws_region
   profile = "default"
   access_key = "AKIA3TAMK6ZMEV4BJ3PX"
-  aws_secret_access_key = "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"
+  secret_key = "olddkq/p3Qa8S03SOsQw/FxbpluZ28g0KBYVWJ0F"
 }
 
 
