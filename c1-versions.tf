@@ -12,7 +12,7 @@ terraform {
 # Provider Block
 provider "aws" {
   region  = var.aws_region
-  profile = "terraform_user"
+  profile = "default"
   shared_credentials_files = ["/.aws/credentials"]
 }
 
