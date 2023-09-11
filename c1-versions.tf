@@ -13,7 +13,7 @@ terraform {
 provider "aws" {
   region  = var.aws_region
   profile = "terraform_user"
-  shared_credentials_files = "/.aws/credentials"
+  shared_credentials_files = ["/.aws/credentials"]
 }
 
 
