@@ -3,6 +3,7 @@ resource "aws_security_group" "vpc-ssh" {
   name        = "vpc-ssh-${terraform.workspace}"
   description = "Dev VPC SSH"
   vpc_id      = aws_vpc.vpc-dev.id
+
   ingress {
     description = "Allow Port 22"
     from_port   = 22
@@ -31,16 +32,6 @@ resource "aws_security_group" "vpc-web" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-
-  // Allow inbound ICMP (ping) traffic
-  ingress {
-    from_port   = -1
-    to_port     = -1
-    protocol    = "icmp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
 
   ingress {
     description = "Allow Port 443"

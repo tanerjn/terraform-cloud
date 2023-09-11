@@ -12,14 +12,9 @@ terraform {
 # Provider Block
 provider "aws" {
   region  = var.aws_region
-  profile = "default"
-  shared_credentials_files  = ["%USERPROFILE%/.aws/credentials"]
-
+  shared_credentials_files = ["%USERPROFILE%/.aws/credentials"]
+  profile = "terraform_user"
 }
-
-
-
-
 /*
 Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
 $HOME/.aws/credentials
