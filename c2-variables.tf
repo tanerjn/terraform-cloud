@@ -11,3 +11,16 @@ variable "instance_type" {
   default = "t2.micro"
   #default = "t2.small"
 }
+
+
+variable "tfc_aws_dynamic_credentials" {
+  description = "Object containing AWS dynamic credentials configuration"
+  type = object({
+    default = object({
+      shared_config_file = "~/.aws/credentials"
+    })
+    aliases = map(object({
+      shared_config_file = string
+    }))
+  })
+}
